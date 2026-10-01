@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Finalizar assinatura | HomeWise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="checkout-page">
+    <header class="navbar">
+        <div class="container nav">
+            <a href="index.html" class="logo" aria-label="HomeWise, página inicial">
+                <img class="logo-image" src="img/logo_Homewise.png" alt="">
+                <span class="logo-name">Home<span>Wise</span></span>
+            </a>
+            <a href="precos.html" class="checkout-back">Voltar aos planos</a>
+        </div>
+    </header>
+
+    <main class="container checkout-main">
+        <div class="checkout-heading">
+            <p class="checkout-kicker">ASSINATURA HOMEWISE</p>
+            <h1>Finalize seu <span class="gradient">plano</span></h1>
+            <p class="lead">Informe seus dados para continuar ao pagamento seguro.</p>
+        </div>
+
+        <div class="checkout-layout">
+            <form id="checkout-form" class="checkout-form" novalidate>
+                <section class="checkout-section" aria-labelledby="customer-heading">
+                    <h2 id="customer-heading">Seus dados</h2>
+                    <div class="checkout-fields">
+                        <label class="checkout-field checkout-field-full">
+                            <span>Nome completo</span>
+                            <input name="name" type="text" autocomplete="name" minlength="3" maxlength="120" required>
+                        </label>
+                        <label class="checkout-field">
+                            <span>E-mail</span>
+                            <input name="email" type="email" autocomplete="email" maxlength="254" required>
+                        </label>
+                        <label class="checkout-field">
+                            <span>CPF</span>
+                            <input name="cpf" type="text" inputmode="numeric" autocomplete="off" placeholder="000.000.000-00" maxlength="14" required aria-describedby="cpf-hint">
+                            <small id="cpf-hint">Validamos o formato do CPF. A confirmação dos dados depende do serviço de pagamento.</small>
+                        </label>
+                        <label class="checkout-field checkout-field-full">
+                            <span>Celular com DDD</span>
+                            <input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 99999-9999" maxlength="16" required>
+                        </label>
+                    </div>
+                </section>
+
+                <fieldset class="checkout-section payment-options">
+                    <legend>Forma de pagamento</legend>
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod" value="pix" checked>
+                        <span class="payment-option-copy"><strong>Pix</strong><small>Pagamento instantâneo pelo app do seu banco.</small></span>
+                        <span class="payment-mark" aria-hidden="true">PIX</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod" value="card">
+                        <span class="payment-option-copy"><strong>Cartão</strong><small>Crédito ou débito, conforme disponibilidade do provedor.</small></span>
+                        <span class="payment-mark payment-mark-card" aria-hidden="true">▰</span>
+                    </label>
+                    <p class="payment-security">Os dados do cartão ou do Pix serão informados somente na página segura do provedor de pagamento. Não digitamos nem armazenamos dados de cartão neste site.</p>
+                </fieldset>
+
+                <p id="checkout-message" class="checkout-message" role="status" aria-live="polite"></p>
+                <button class="btn btn-primary checkout-submit" type="submit">Continuar para pagamento seguro</button>
+                <p class="checkout-terms">Ao continuar, você confirma que os dados informados são seus e aceita os termos da assinatura.</p>
+            </form>
+
+            <aside class="checkout-summary" aria-labelledby="summary-heading">
+                <p class="summary-label">RESUMO</p>
+                <h2 id="summary-heading">Plano selecionado</h2>
+                <div id="checkout-plan" class="summary-plan">Carregando plano...</div>
+                <div class="summary-total"><span>Total</span><strong id="checkout-price">--</strong></div>
+                <p class="summary-renewal">Cobrança recorrente mensal. Você poderá gerenciar sua assinatura conforme as condições do plano.</p>
+                <a href="precos.html" class="summary-change">Trocar de plano</a>
+            </aside>
+        </div>
+    </main>
+
+    <footer><div class="container">© 2026 HomeWise — Tecnologia com propósito para economizar água e energia.</div></footer>
+    <script src="checkout.js"></script>
+</body>
+</html>
